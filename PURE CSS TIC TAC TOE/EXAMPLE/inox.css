@@ -1,0 +1,154 @@
+body{background: blue;}
+
+.board {
+    width: 198px;
+    height: 333px;
+    margin: auto;
+    position: relative;
+    background: blueviolet;
+    }
+
+    .boxes {
+        width: 242px;
+        height: 242px;
+        border: 1px solid #666666;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        background: yellowgreen;
+        }
+
+        input[type=checkbox] {
+            -webkit-appearance: none;
+               -moz-appearance: none;
+                    appearance: none;
+            opacity: 0.01;
+            position: absolute;
+            z-index: 0;
+          }
+
+          .controls {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+            left: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            width: calc(100% + 2ch);
+            z-index: 1;
+            background: saddlebrown;
+          }
+
+          .control.-x {
+            overflow: hidden;
+            flex-grow: 1;
+            height: 100%;
+            width: 0;
+            background: red;
+          }
+
+          .control.-o {
+            flex-basis: 100%;
+            white-space: nowrap;
+            background: black;
+          }
+
+
+          .control.-o .control-labels {width: 240px;
+        background: blueviolet;}
+
+        .control .control-labels {
+  display: inline-flex;
+  flex-wrap: wrap;
+  background: pink;
+}
+
+        /* если происходит клик:
+        - счетчик увеличивается на один,
+        и показывается О */
+        .control.-o:after {
+          content: counter(turn);
+          display: inline;
+          visibility: hidden;
+        }
+        /*****/
+        /* оформление параметров клетки - стартового фона нет */
+        label {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 90%;
+            background-color: #0deb3d;
+            border-radius: 0;
+            box-shadow: inset 0 0 0 1px #666666;
+            cursor: pointer;
+            height: 180px;
+            transition: background 0.2s;
+            width: 180px;
+          }
+          /* начинает игру О, поэтому при наведении фон корияневый */
+          label:hover {background-color: #facca9;}
+          label.o:hover {background-color: #d7f3f9;}   
+
+
+/* отображение доски и других элементов и их изменение при смене хода */
+.turn {
+background: #d76786;
+  display: flex;
+  flex-wrap: wrap;
+  /* контент обрезается, без предоставления прокрутки */
+  overflow: hidden;
+  position: absolute;
+  right: -11px;
+  top: -11px;
+  bottom: -11px;
+  left: -11px;
+  z-index: 0;
+}
+/* ходы */
+.turn .turn-x {
+  box-shadow: inset 0 0 0 10px #facca9;
+  flex-grow: 1;
+  height: 100%;
+  width: 0;
+}
+.turn .turn-o {
+  box-shadow: inset 0 0 0 10px #d7f3f9;
+  color: #d7f3f9;
+  flex-basis: 100%;
+  box-sizing: border-box;
+  padding-left: calc(100% - 1ch);
+}
+.turn .turn-o:before {
+  content: counter(turn);
+}
+
+    /* оформление надписи */
+    h1 {
+      color: #3dc5e0;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      margin: 20px 0 -50px;
+      text-align: center;
+    }
+      /* добавляем расцветку */
+      h1 span:nth-of-type(1),
+      h1 span:nth-of-type(3) {color: #e36b0d;}
+
+
+    /*********/
+/*@-moz-document url-prefix() {input[type=checkbox]:checked {background: none;}}*/
+/* оформление кнопки Reset при окончании текущей игры */
+button[type=reset] {
+border: none;
+border-radius: 3px;
+color: white;
+cursor: pointer;
+font-size: 18px;
+height: auto;
+padding: 8px 10px;
+position: static;
+width: auto;
+}
+

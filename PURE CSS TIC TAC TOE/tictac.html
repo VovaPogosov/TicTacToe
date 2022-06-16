@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>крестики нолилики</title>
+    <link rel="stylesheet" href="tictac.css">
+</head>
+<body>
+    <!--форма - доска для крестиков ноликов-->
+    <form class="board">
+        <!-- общий слой с чекбоксами -->
+        <div class="boxes">
+          <!-- чекбоксы -->
+          <input class="x" id="x-1" type="checkbox" />
+          <input class="x" id="x-2" type="checkbox" />
+          <input class="x" id="x-3" type="checkbox" />
+          <input class="x" id="x-4" type="checkbox" />
+          <input class="x" id="x-5" type="checkbox" />
+          <input class="x" id="x-6" type="checkbox" />
+          <input class="x" id="x-7" type="checkbox" />
+          <input class="x" id="x-8" type="checkbox" />
+          <input class="x" id="x-9" type="checkbox" />
+          <input class="o" id="o-1" type="checkbox" />
+          <input class="o" id="o-2" type="checkbox" />
+          <input class="o" id="o-3" type="checkbox" />
+          <input class="o" id="o-4" type="checkbox" />
+          <input class="o" id="o-5" type="checkbox" />
+          <input class="o" id="o-6" type="checkbox" />
+          <input class="o" id="o-7" type="checkbox" />
+          <input class="o" id="o-8" type="checkbox" />
+          <input class="o" id="o-9" type="checkbox" />
+      <!-- общий слой для подписей к чекбоксам -->
+          <div class="controls">
+            <!-- слой для подписей к чекбоксам при ходе Х -->
+            <div class="control -x">
+              <!-- общий слой наклеек -->
+              <div class="control-labels">
+              <!-- наклейки Х для чекбоксов Х с 0 по 9 -->
+                <label class="x" for="x-1"></label>
+                <label class="x" for="x-2"></label>
+                <label class="x" for="x-3"></label>
+                <label class="x" for="x-4"></label>
+                <label class="x" for="x-5"></label>
+                <label class="x" for="x-6"></label>
+                <label class="x" for="x-7"></label>
+                <label class="x" for="x-8"></label>
+                <label class="x" for="x-9"></label>
+              </div>
+            </div>
+            <!-- слой для подписей к чекбоксам при ходе 0 -->
+            <div class="control -o">
+              <!-- общий слой наклеек -->
+              <div class="control-labels">
+              <!-- наклейки 0 для чекбоксов 0 с 10 по 18 -->
+                <label class="o" for="o-1"></label>
+                <label class="o" for="o-2"></label>
+                <label class="o" for="o-3"></label>
+                <label class="o" for="o-4"></label>
+                <label class="o" for="o-5"></label>
+                <label class="o" for="o-6"></label>
+                <label class="o" for="o-7"></label>
+                <label class="o" for="o-8"></label>
+                <label class="o" for="o-9"></label>
+              </div>
+            </div>
+          </div>
+          <!--обьявление победителя-->
+          <div class="done">
+            <div class="lead">Победил</div><div class="winner"></div>
+            <button type="reset">Снова</button>
+          </div>
+          <!--обьявление ничьи-->
+          <div class="tie"><span>Это ничья</span>
+            <button type="reset">Снова</button>
+          </div>
+          <!-- ходы - только перемена цвета в клетке -->
+          <div class="turn">
+            <div class="turn-x"></div>
+            <div class="turn-o"></div>
+          </div>
+        </div>
+        <h1><span>Tic</span><span>Tac</span><span>Toe</span></h1>
+      </form>
+</body>
+</html>
